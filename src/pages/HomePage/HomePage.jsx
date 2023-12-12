@@ -13,9 +13,11 @@ import Notification from "../../components/Notification/Notification";
 import { nextEventResource } from "../../Services/Service";
 
 
+
 const HomePage = () => {
   const [nextEvents, setNextEvents] = useState([]);
   const [notifyUser, setNotifyUser] = useState(); //Componente Notification
+
 
   // roda somente na inicialização do componente
   useEffect(() => {
@@ -42,6 +44,8 @@ const HomePage = () => {
     getNextEvents(); //chama a função
   }, []);
 
+
+
   return (
     
     <MainContent>
@@ -51,7 +55,7 @@ const HomePage = () => {
       {/* PRÓXIMOS EVENTOS */}
       <section className="proximos-eventos">
         <Container>
-          {/* <Title titleText={"Próximos Eventos"} /> */}
+          <Title titleText={"Próximos Eventos"} />
 
           <div className="events-box">
             {nextEvents.map((e) => {
