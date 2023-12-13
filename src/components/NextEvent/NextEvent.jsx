@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./NextEvent.css";
 
 import { Tooltip } from "react-tooltip";
@@ -46,12 +47,8 @@ const NextEvent = ({ title, description, eventDate, idEvent}) => {
 export default NextEvent;
 
 export const DetalhesEvents = ({ title, description, eventDate, idEvent}) => {
-  function conectar(idEvent) {
-    // dá pra usar a prop idEvent? testar
-    alert(`Chamar o recurso para conectar: ${idEvent}`);
-  }
   return (
-    <article className="event-card">
+    <article className="event-card-back">
       <h2 className="event-card__title">{title}</h2>
 
       <p
@@ -69,6 +66,10 @@ export const DetalhesEvents = ({ title, description, eventDate, idEvent}) => {
         {/* aplicar a função pra converter a data */}
         {dateFormatDbToView(eventDate)}
       </p>
+      
+      <Link to={`/detalhes-eventos/${idEvent}`} className="event-card__connect-link">
+          Visualizar
+        </Link>
 
     </article>
   );

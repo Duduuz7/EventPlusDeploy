@@ -41,8 +41,8 @@ export const institutionResource = '/Instituicao';
 export const loginResource = '/Login';
 
 const apiPort = '5000';
-const localApiUri = `http://localhost:${apiPort}/api`;
-const externallApiUri = `eventwebapieduardo.azurewebsites.net`;
+// const localApiUri = `http://localhost:${apiPort}/api`;
+const externallApiUri = `https://eventwebapieduardo.azurewebsites.net/api`;
 
 const api = axios.create({
     // baseURL: localApiUri

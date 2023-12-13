@@ -9,7 +9,7 @@ import "react-tooltip/dist/react-tooltip.css";
 // import trashDelete from "../../../assets/images/trash-delete.svg";
 import "./TableDv.css";
 
-const TableDv = ({ dados, fnConnect = null}) => {
+const TableDv = ({ dados }) => {
   return (
     <table className="tbal-data">
       <thead className="tbal-data__head">
@@ -56,11 +56,7 @@ const TableDv = ({ dados, fnConnect = null}) => {
                   manipulationFunction={
                     new Date(e.dataEvento) > Date.now()
                       ? () => {
-                          fnConnect(
-                            e.idEvento,
-                            e.situacao ? "unconnect" : "connect",
-                            e.idPresencaEvento //parâmetro opcional
-                          );
+                          
                         }
                       : () => {
                           alert("Evento não está mais disponível");
