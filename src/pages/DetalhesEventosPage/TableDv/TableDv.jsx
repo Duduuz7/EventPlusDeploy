@@ -1,6 +1,4 @@
 import React from "react";
-import comentaryIcon from "../../../assets/images/comentary-icon.svg";
-import { dateFormateDbToView } from "../../../Utils/stringFunctions";
 import ToggleSwitch from "../../../components/Toggle/Toggle";
 // importa a biblioteca de tootips ()
 import "react-tooltip/dist/react-tooltip.css";
@@ -9,67 +7,45 @@ import "react-tooltip/dist/react-tooltip.css";
 // import trashDelete from "../../../assets/images/trash-delete.svg";
 import "./TableDv.css";
 
-const TableDv = ({ dados }) => {
+const Table = ({ dados, idEvento }) => {
   return (
     <table className="tbal-data">
       <thead className="tbal-data__head">
         <tr className="tbal-data__head-row tbal-data__head-row--red-color">
           <th className="tbal-data__head-title tbal-data__head-title--big">
-            Evento
+            Cometário
           </th>
           <th className="tbal-data__head-title tbal-data__head-title--big">
-            Data
+            Autor
           </th>
           <th className="tbal-data__head-title tbal-data__head-title--big">
-            Ações
+            Exibe
           </th>
         </tr>
       </thead>
       <tbody>
         {dados.map((e) => {
-          return (
-            <tr className="tbal-data__head-row" key={Math.random()}>
-              <td className="tbal-data__data tbal-data__data--big">
-                {e.nomeEvento}
-              </td>
+          {
+            return (
+              <tr className="tbal-data__head-row" key={Math.random()}>
+                <td className="tbal-data__data tbal-data__data--big">
+                  {e.descricao}
+                </td>
 
-              <td className="tbal-data__data tbal-data__data--big tbal-data__btn-actions">
-                {/* {e.dataEvento} */}
-                {dateFormateDbToView(e.dataEvento)}
-              </td>
+                <td className="tbal-data__data tbal-data__data--big tbal-data__btn-actions">
+                  {e.usuario.nome}
+                </td>
 
-              <td className="tbal-data__data tbal-data__data--big tbal-data__btn-actions">
-                {/* imagem do comentário - abre o modal */}
-                {new Date(e.dataEvento) < Date.now() ? (
-                  <img
-                    className="tbal-data__icon"
-                    // idevento={e.idEvento}
-                    src={comentaryIcon}
-                    alt=""
-                    // onClick={() => {
-                    //   fnShowModal(e.idEvento);
-                    // }}
-                  />
-                ) : null}
-                <ToggleSwitch
-                  toggleActive={e.situacao}
-                  manipulationFunction={
-                    new Date(e.dataEvento) > Date.now()
-                      ? () => {
-                          
-                        }
-                      : () => {
-                          alert("Evento não está mais disponível");
-                        }
-                  }
-                />
-              </td>
-            </tr>
-          );
-        })}
+                <td className="tbal-data__data tbal-data__data--big tbal-data__btn-actions">
+                  <ToggleSwitch toggleActive={e.exibe}/>
+                </td>
+              </tr>
+            ) ;
+          }
+        })} 
       </tbody>
     </table>
   );
 };
 
-export default TableDv;
+export default Table;

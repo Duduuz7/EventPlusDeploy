@@ -102,6 +102,7 @@ const HomePage = () => {
                     title={e.nomeEvento}
                     description={e.descricao}
                     eventDate={e.dataEvento}
+                    text={"Visualizar"}
                   />
                 );
               })
