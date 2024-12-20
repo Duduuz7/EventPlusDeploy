@@ -9,7 +9,7 @@ const VisionSection = () => {
                 <Title 
                     titleText={"Visão"}
                     color='white'
-                    potatoClass='vision__title'
+                    additionalClass='vision__title'
                 />
                 <p className='vision__text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus autem assumenda, suscipit distinctio debitis nihil voluptates sunt sit, nesciunt dolorum dolorem magnam vitae illum commodi, magni quod eveniet ab dolor.Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus autem assumenda, suscipit distinctio debitis nihil voluptates sunt sit, nesciunt dolorum dolorem magnam vitae illum commodi, magni quod eveniet ab dolor.</p>
             </div>

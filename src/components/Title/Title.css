@@ -4,6 +4,7 @@
 }
 
 .title {
+    margin-top: 5%;
     width: 100%;
     font-family: Poppins-SemiBold;
     font-size: 1.1rem;
@@ -14,6 +15,7 @@
 }
 
 .title__underscore {
+    
     display: block;
     margin: 15px auto 0 auto;
 

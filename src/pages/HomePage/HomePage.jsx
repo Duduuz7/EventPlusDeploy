@@ -41,8 +41,8 @@ const HomePage = () => {
         setBackEvents(request.data)
 
       } catch (error) {
-        alert("Deu ruim no back Events")
-        console.log(error);
+        // alert("Deu ruim no back Events")
+        console.log("Deu ruim no back Events", error);
       }
     }
 
